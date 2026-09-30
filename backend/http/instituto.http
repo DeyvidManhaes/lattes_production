@@ -1,0 +1,20 @@
+### Listar institutos
+GET http://localhost:8080/instituto/exibir
+
+### Incluir instituto
+POST http://localhost:8080/instituto/incluir
+Content-Type: application/json
+
+{ "nome": "Faculdade Professor Miguel Ângelo da Silva Santos", "acronimo": "FeMASS" }
+
+### Alterar instituto
+POST http://localhost:8080/instituto/alterar
+Content-Type: application/json
+
+{ "id": 1, "nome": "Faculdade Professor Miguel Ângelo da Silva Santos", "acronimo": "FeMASS" }
+
+### Excluir instituto (409 se houver pesquisadores vinculados)
+DELETE http://localhost:8080/instituto/excluir/1
+
+### Arestas do grafo de institutos (tipoIds é opcional)
+GET http://localhost:8080/instituto/contarTrabalhosEntreInstitutos

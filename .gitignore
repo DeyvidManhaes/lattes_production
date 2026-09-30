@@ -1,0 +1,13 @@
+# Java / Maven
+target/
+*.class
+# Node
+node_modules/
+build/
+# Segredos e configuração local (os .env.example continuam versionados)
+.env
+# IDE / SO
+.idea/
+.vscode/
+*.iml
+.DS_Store

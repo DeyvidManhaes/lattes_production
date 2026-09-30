@@ -1,0 +1,14 @@
+### Tipos de produção
+GET http://localhost:8080/tipo/exibir
+
+### Trabalhos sem repetição
+GET http://localhost:8080/trabalho/exibir
+
+### Todos os trabalhos (um por pesquisador)
+GET http://localhost:8080/trabalho/exibir/todos
+
+### Trabalhos em comum entre pesquisadores
+GET http://localhost:8080/trabalho/exibir/trabalhoscomuns
+
+### Nomes para citação
+GET http://localhost:8080/nome/exibir

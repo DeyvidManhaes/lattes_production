@@ -1,0 +1,16 @@
+ # Sobe apenas o PostgreSQL usado pelo back-end.
+services:
+  db:
+    image: postgres:16
+    container_name: lattes-db
+    environment:
+      POSTGRES_DB: bd_lattesproduction
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - lattes-data:/var/lib/postgresql/data
+
+volumes:
+  lattes-data:

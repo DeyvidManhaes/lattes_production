@@ -1,0 +1,78 @@
+/* Home.css */
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 250px;
+  /* Define a altura fixa */
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  /* Use 100% para a altura, para que o gráfico ocupe todo o espaço disponível */
+  width: 100%;
+  /* Mantém a largura completa da tela */
+  border: 10px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart--container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  /* Para dar um pouco de espaço entre o gráfico e a legenda */
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.img-fluid {
+    max-width: 90%;
+      /* Ajuste o valor conforme necessário para garantir que a imagem se ajuste */
+      max-height: 90%;
+      /* Ajuste o valor conforme necessário para garantir que a imagem se ajuste */
+      width: auto;
+      height: auto;
+}

@@ -1,0 +1,14 @@
+### Listar pesquisadores
+GET http://localhost:8080/pesquisador/exibir
+
+### Importar pesquisador a partir do XML (arquivoId = nome do arquivo sem .xml)
+POST http://localhost:8080/pesquisador/incluir
+Content-Type: application/json
+
+{ "arquivoId": "0348923590713594", "institutoId": 1 }
+
+### Excluir pesquisador e suas produções
+DELETE http://localhost:8080/pesquisador/excluir/348923590713594
+
+### Arestas do grafo de pesquisadores (tipoIds é opcional, ex.: ?tipoIds=1,2)
+GET http://localhost:8080/pesquisador/contarTrabalhosEntrePesquisadores
