@@ -169,24 +169,6 @@ As duas rotas de contagem aceitam o parâmetro opcional `tipoIds` (por exemplo `
 
 Erros voltam como `{ "mensagem": "..." }` com o status HTTP adequado (400, 404 ou 409). Há exemplos prontos de requisição na pasta `backend/http`.
 
-## O que corrigi ao juntar os projetos
-
-**Back-end**
-- O caminho dos XMLs estava fixo no meu computador; agora é configurável (`LATTES_CURRICULOS_DIR`) e os XMLs vêm junto no repositório.
-- A senha do banco saiu do código e passou a ser variável de ambiente.
-- Os tipos de produção eram procurados pelos ids 10 e 12, que só existiam no meu banco. Agora são criados por nome ao iniciar.
-- O leitor de XML guardava dados em atributos compartilhados entre requisições e casava trabalhos e citações pela posição na lista. Foi reescrito sem estado, e cada trabalho já carrega os seus nomes de citação.
-- O identificador do currículo agora aceita só dígitos, o que impede acesso a arquivos fora da pasta configurada.
-- A importação roda em uma transação e recusa pesquisador repetido, em vez de duplicar as produções.
-- A contagem de trabalhos em comum ficou linear (antes era quadrática) e passou a contar corretamente trabalhos compartilhados por mais de dois pesquisadores. Títulos são comparados sem diferença de acento, maiúscula ou pontuação.
-- O e-mail agora é lido do atributo certo do XML; quando não existe, é gerado um endereço fictício com o domínio reservado `.invalid`. Itens sem título ou sem ano são ignorados, e não recebem mais o ano 2000 por padrão.
-- Exclusão passou a usar `DELETE`, com erros claros (por exemplo, instituto com pesquisadores vinculados devolve 409). O CORS ficou em um único lugar.
-
-**Front-end**
-- A URL da API deixou de estar fixa em `index.js` e passou a vir de `REACT_APP_API_URL`.
-- Grafo: as arestas eram montadas separando `"NomeA-NomeB"` pelo hífen, o que quebrava com nomes compostos. Agora os vértices e arestas usam ids do banco. O filtro por tipo de produção também não funcionava (comparava um texto com um objeto) e agora vale para as arestas. Campo vazio nas regras de plotagem não gera mais valor inválido.
-- Mensagens de erro do servidor aparecem para o usuário, e formulários só fecham quando a operação dá certo.
-- Campos que podiam ser nulos (e-mail, instituto) não derrubam mais as telas, e a paginação usa botões em vez de links `javascript:void(0)`.
 
 ## Limitações conhecidas
 
